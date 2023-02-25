@@ -58,6 +58,6 @@ export class AuthController {
       expires: new Date(new Date().getTime() + 30 * 1000),
     });
 
-    res.redirect(302, 'http://localhost:3000');
+    res.redirect(302, '/');
   }
 }

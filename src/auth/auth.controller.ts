@@ -58,6 +58,8 @@ export class AuthController {
       expires: new Date(new Date().getTime() + 30 * 1000),
     });
 
-    res.redirect(302, '/');
+    const host = this.configService.get<string>('SELF_HOST');
+
+    res.redirect(302, `/`);
   }
 }

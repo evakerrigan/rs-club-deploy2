@@ -58,6 +58,7 @@ export class AuthController {
       expires: new Date(new Date().getTime() + 30 * 1000),
     });
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const host = this.configService.get<string>('SELF_HOST');
 
     res.redirect(302, `/`);

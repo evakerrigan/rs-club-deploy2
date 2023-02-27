@@ -2,8 +2,8 @@ import { Controller, Get, Req, Response, UseGuards } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { AuthGuard } from '@nestjs/passport';
-import { JwtAuthGuard } from '../guards/auth.guard';
-import { UsersService } from '../users/users.service';
+import { JwtAuthGuard } from 'src/guards/auth.guard';
+import { UsersService } from 'src/users/users.service';
 
 @Controller('auth')
 export class AuthController {
@@ -57,9 +57,6 @@ export class AuthController {
     res.cookie('userId', userID, {
       expires: new Date(new Date().getTime() + 30 * 1000),
     });
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const host = this.configService.get<string>('SELF_HOST');
 
     res.redirect(302, `/`);
   }

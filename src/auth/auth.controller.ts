@@ -41,7 +41,7 @@ export class AuthController {
     }
     const payload = { sub: user.id, username: user.username };
     const rsAccessToken = this.jwtService.sign(payload);
-    /*
+    /* 
       ищу юзера в бд, если нет, то создаем, а если есть, обновляю токен
     */
     const userID = id ? String(id).valueOf() : String(findUser?._id).valueOf();

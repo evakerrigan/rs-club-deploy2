@@ -12,6 +12,9 @@ import { join } from 'path';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'client'),
       exclude: ['/api*'],
+      serveStaticOptions: {
+        maxAge: 1,
+      },
     }),
     ConfigModule.forRoot({
       isGlobal: true,
